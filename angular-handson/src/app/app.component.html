@@ -6,6 +6,30 @@
 
   <!-- below you call the component as a class selector -->
   <!-- <div class="app-header"></div> -->
-  Hello Angular with bootstrap!
-  <app-dummy></app-dummy>
+  <h3>{{ header1 }}</h3>
+  <div class="form">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" [placeholder]="serverNamePlaceholder" [(ngModel)]="serverName">
+      <!-- <input type="text" class="form-control" [placeholder]="serverNamePlaceholder" [value]="serverName" #inputServerName> -->
+    </div>
+    <div class="form-group">
+      <label for="">Status</label>
+      <input type="text" class="form-control" [placeholder]="serverStatusPlaceholder" [(ngModel)]="serverStatus">
+      <!-- <input type="text" class="form-control" [placeholder]="serverStatusPlaceholder" [value]="serverStatus" #inputServerStatus> -->
+    </div>
+    <button [disabled]="isButtonDisabled" class="btn btn-primary" (click)="createServer($event)">Create</button>
+    <!-- <button [disabled]="isButtonDisabled" class="btn btn-primary" (click)="createServer($event, inputServerName, inputServerStatus)">Create</button> -->
+  </div>
+
+  <h3 [innerHTML]="header2"></h3>
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let server of servers; let i = index">
+      <div class="row">
+          <div class="col-xs-2">#{{ i }}</div>
+          <div class="col-xs-5">{{ server.name }}</div>
+          <div class="col-xs-5">{{ server.status }}</div>
+      </div>
+    </div>
+  </div>
 </div>

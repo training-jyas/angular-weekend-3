@@ -11,15 +11,15 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Component selector
 - [X] What is databinding
 - [X] String interpolation
-- [ ] Property binding
-- [ ] Event binding
-- [ ] Passing and using data with event binding
-- [ ] Two way data binding and why FormsModule ?
-- [ ] Understanding directives
+- [X] Property binding
+- [X] Event binding
+- [X] Passing and using data with event binding
+- [X] Two way data binding and why FormsModule ?
+- [X] Understanding directives
 - [ ] Using ngIf with else condition
 - [ ] Styling elements with ngStyle
 - [ ] Applying classes with ngClass
-- [ ] Using ngFor to work with lists
+- [X] Using ngFor to work with lists
 
 # Components
 - [ ] Module introduction
