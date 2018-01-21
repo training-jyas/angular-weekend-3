@@ -1,21 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { DummyComponent } from './dummy/dummy.component';
-import { Dummy2Component } from './dummy/dummy-2/dummy-2.component';
-
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   declarations: [ // all the components and directives go here
-    AppComponent,
-    HeaderComponent,
-    DummyComponent,
-    Dummy2Component
+    AppComponent
   ],
   imports: [ // all the third party modules go here
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HeaderModule
   ],
   providers: [], // all the services go here
   bootstrap: [AppComponent]

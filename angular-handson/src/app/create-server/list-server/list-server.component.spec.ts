@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Dummy2Component } from './dummy-2.component';
+import { ListServerComponent } from './list-server.component';
 
-describe('Dummy2Component', () => {
-  let component: Dummy2Component;
-  let fixture: ComponentFixture<Dummy2Component>;
+describe('ListServerComponent', () => {
+  let component: ListServerComponent;
+  let fixture: ComponentFixture<ListServerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Dummy2Component ]
+      declarations: [ ListServerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Dummy2Component);
+    fixture = TestBed.createComponent(ListServerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
