@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
+import { CreateServerModule } from './create-server/create-server.module';
+import { ListServerModule } from './list-server/list-server.module';
 
 @NgModule({
   declarations: [ // all the components and directives go here
@@ -12,7 +14,9 @@ import { HeaderModule } from './header/header.module';
   imports: [ // all the third party modules go here
     BrowserModule,
     FormsModule,
-    HeaderModule
+    HeaderModule,
+    CreateServerModule,
+    ListServerModule
   ],
   providers: [], // all the services go here
   bootstrap: [AppComponent]

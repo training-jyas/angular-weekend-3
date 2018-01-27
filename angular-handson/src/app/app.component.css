@@ -1,0 +1,9 @@
+.row-style-1 {
+    background: cyan;
+    font-style: italic;
+}
+
+.row-style-2 {
+    background: red;
+    font-weight: bold;
+}
