@@ -1,0 +1,21 @@
+<h3 [innerHTML]="header2"></h3>
+  <button class="btn btn-default" (click)="toggleShow('1')">Show Type 1</button>
+  <button class="btn btn-default" (click)="toggleShow('2')">Show Type 2</button>
+  <button class="btn btn-default" (click)="toggleShow('all')">Show All</button>
+  <div class="list-group">
+    <div class="list-group-item" 
+      *ngFor="let server of servers; let i = index" 
+      [ngClass]="{'row-style-1': server.type === '1', 'row-style-2': server.type === '2'}">
+      <!-- <div class="list-group-item" 
+      *ngFor="let server of servers; let i = index" 
+      [ngClass]="{'row-style-1': server.type === '1', 'row-style-2': server.type === '2'}"
+      [ngStyle]="{'background': server.type === '2' ? 'red' : 'cyan'}"> -->
+      <!-- <div class="row" *ngIf="showType === 'all' || server.type === showType"> -->
+      <div class="row">
+          <div class="col-xs-2">#{{ i }}</div>
+          <div class="col-xs-3">{{ server.name }}</div>
+          <div class="col-xs-4">{{ server.status }}</div>
+          <div class="col-xs-3">{{ server.type }}</div>
+      </div>
+    </div>
+  </div>
