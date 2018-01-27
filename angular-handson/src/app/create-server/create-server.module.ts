@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { CreateServerComponent } from './create-server.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  declarations: [CreateServerComponent]
+  declarations: [CreateServerComponent],
+  exports: [CreateServerComponent]
 })
 export class CreateServerModule { }

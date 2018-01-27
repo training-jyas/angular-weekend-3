@@ -16,9 +16,9 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Passing and using data with event binding
 - [X] Two way data binding and why FormsModule ?
 - [X] Understanding directives
-- [ ] Using ngIf with else condition
-- [ ] Styling elements with ngStyle
-- [ ] Applying classes with ngClass
+- [X] Using ngIf with else condition
+- [X] Styling elements with ngStyle
+- [X] Applying classes with ngClass
 - [X] Using ngFor to work with lists
 
 # Components
