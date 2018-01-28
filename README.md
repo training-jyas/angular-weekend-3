@@ -22,19 +22,19 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Using ngFor to work with lists
 
 # Components
-- [ ] Module introduction
-- [ ] Splitting Apps into components
-- [ ] Property and Event bindings overview
-- [ ] Binding to custom properties
-- [ ] Alias to custom properties
-- [ ] Binding to custom events
-- [ ] Alias to custom events
-- [ ] Understanding view encapsulation
-- [ ] Using local references in templates
-- [ ] Get access to Template and DOM using @ViewChild
-- [ ] Project content into components using `ng-content`
-- [ ] Lifecycle and its details
-- [ ] Access to ng-content using @ContentChild
+- [x] Module introduction
+- [X] Splitting Apps into components
+- [X] Property and Event bindings overview
+- [X] Binding to custom properties
+- [X] Alias to custom properties
+- [X] Binding to custom events
+- [X] Alias to custom events
+- [X] Understanding view encapsulation
+- [X] Using local references in templates
+- [X] Get access to Template and DOM using @ViewChild
+- [x] Project content into components using `ng-content`
+- [X] Lifecycle and its details
+- [X] Access to ng-content using @ContentChild
 
 # Project - Components
 - [ ] Introduction

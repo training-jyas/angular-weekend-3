@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-create-server',
@@ -6,7 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./create-server.component.css']
 })
 export class CreateServerComponent implements OnInit {
-  @Output('serverCreated') serverCreated = new EventEmitter<any>();
+  @Output('srvCreated') serverCreated = new EventEmitter<any>();
+  @ViewChild('inputServerName') serverNameInput: ElementRef;
+  @ViewChild('inputServerStatus') serverStatusInput: ElementRef;
   header1 = 'Create Server';
   isButtonDisabled = false;
   serverNamePlaceholder = 'Please enter a server name';
@@ -22,9 +24,15 @@ export class CreateServerComponent implements OnInit {
     // console.log(event, inputName.value, inputStatus.value);
     console.log(this.serverName);
     console.log(this.serverStatus);
+    console.log(this.serverNameInput, this.serverStatusInput);
+    // const newServer = {
+    //   name: this.serverName,
+    //   status: this.serverStatus,
+    //   type: type
+    // };
     const newServer = {
-      name: this.serverName,
-      status: this.serverStatus,
+      name: this.serverNameInput.nativeElement.value,
+      status: this.serverStatusInput.nativeElement.value,
       type: type
     };
     this.serverCreated.emit(newServer);

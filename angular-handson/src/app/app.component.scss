@@ -1,3 +1,5 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+
 .row-style-1 {
     background: cyan;
     font-style: italic;
@@ -6,4 +8,8 @@
 .row-style-2 {
     background: red;
     font-weight: bold;
+}
+
+button {
+    font-weight: bold !important;
 }
