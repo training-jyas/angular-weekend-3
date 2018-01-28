@@ -6,11 +6,16 @@
 
   <!-- below you call the component as a class selector -->
   <!-- <div class="app-header"></div> -->
-  <app-create-server (serverCreated)="serverWasCreated($event)"></app-create-server>
-  <app-list-server [newServer]="newServer"></app-list-server>
+  <app-create-server (srvCreated)="serverWasCreated($event)"></app-create-server>
+  <app-list-server [newSrv]="newServer">
+    <p #p>
+      this is a paragraph i pass extra
+    </p>
+  </app-list-server>
 
   <div *ngIf="something;else showNothing">
     something
   </div>
   <ng-template #showNothing>nothing</ng-template>
+  <button class="btn btn-default">dummy</button>
 </div>
