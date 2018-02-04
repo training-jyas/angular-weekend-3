@@ -37,11 +37,11 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Access to ng-content using @ContentChild
 
 # Project - Components
-- [ ] Introduction
-- [ ] Add navigation, event binding and ngIf
-- [ ] Pass recipe data with property binding
-- [ ] Pass data with event binding
-- [ ] Allow user to add ingredients to shopping list
+- [X] Introduction
+- [X] Add navigation, event binding and ngIf
+- [X] Pass recipe data with property binding
+- [X] Pass data with event binding
+- [X] Allow user to add ingredients to shopping list
 
 # Directives
 - [ ] Introduction - diff b/w structure and non structure
