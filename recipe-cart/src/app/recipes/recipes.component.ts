@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter
+} from '@angular/core';
+
+import { RecipeModel, IngredientModel } from '../shared/model/ui.model';
 
 @Component({
   selector: 'app-recipes',
@@ -6,32 +13,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipes = [{
-    name: 'Recipe 1',
-    description: 'Very tasty',
-    imagePath: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/BLT_sandwich_on_toast.jpg',
-    ingredients: []
-  }, {
-    name: 'Recipe 2',
-    description: 'Very tastyyyyyyyyyyyy',
-    imagePath: 'http://www.freepngimg.com/download/burger/6-2-burger-png-image.png',
-    ingredients: []
-  }];
-  recipe = {
-    name: 'Recipe 1',
-    description: 'Very tasty',
-    imagePath: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/BLT_sandwich_on_toast.jpg',
-    ingredients: [{
-      name: 'Bread',
-      quantity: 1
-    }, {
-      name: 'Cheese',
-      quantity: 2
-    }]
-  };
-  constructor() { }
+  @Output() addIngredients = new EventEmitter < Array < IngredientModel >> ();
+  recipe: RecipeModel;
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  recipeWasSelected(recipe: RecipeModel) {
+    this.recipe = recipe;
+  }
+
+  ingredientsWasAdded(ingredients: Array<IngredientModel>) {
+    this.addIngredients.emit(ingredients);
   }
 
 }

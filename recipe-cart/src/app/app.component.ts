@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
+import { IngredientModel } from './shared/model/ui.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,8 +10,14 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   feature = 'recipes';
+  ingredients: Array<IngredientModel>;
 
   featureWasSelected(feature: string) {
     this.feature = feature;
+  }
+
+  ingredientsWasAdded(ingredients: Array<IngredientModel>) {
+    console.log(ingredients);
+    this.ingredients = ingredients;
   }
 }
