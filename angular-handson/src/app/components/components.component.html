@@ -1,0 +1,6 @@
+<app-create-server (srvCreated)="serverWasCreated($event)"></app-create-server>
+<app-list-server [newSrv]="newServer">
+  <p #p>
+    this is a paragraph i pass extra
+  </p>
+</app-list-server>

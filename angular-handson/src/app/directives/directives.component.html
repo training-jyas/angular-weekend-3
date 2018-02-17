@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-default" (click)="showOdd()">Show Odd</button>
+      <button class="btn btn-default" (click)="showEven()">Show Even</button>
+      <button class="btn btn-default" (click)="showAll()">Show All</button>
+      <span> Is odd number:- {{ isOdd }}</span>
+    </div>
+    <div class="col-sm-12">
+      <div class="list-group" *ngIf="isOdd === 'all'">
+        <!-- <div class="list-group-item" [ngStyle]="{'background': isNumOdd(num) ? 'yellow' : 'cyan'}" *ngFor="let num of numArray"> -->
+        <div class="list-group-item" [ngClass]="{'odd': isNumOdd(num), 'even': !isNumOdd(num)}" *ngFor="let num of numArray">
+          <span> {{ num }}</span>
+        </div>
+      </div>
+      <div class="list-group" *ngIf="isOdd">
+        <div class="list-group-item" *ngFor="let num of numOdd">
+          {{ num }}
+        </div>
+      </div>
+      <div class="list-group" *ngIf="!isOdd">
+        <div class="list-group-item" *ngFor="let num of numEven">
+          {{ num }}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <p appBasicHighlight>this is a paragraph 1</p>
+      <p appBetterHighlight>this is a paragraph 2</p>
+    </div>
+    <hr>
+    <div class="col-sm-12">
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="3">value is 3</p>
+        <p *ngSwitchCase="4">value is 4</p>
+        <p *ngSwitchCase="5">value is 5</p>
+        <p *ngSwitchDefault>value is default</p>
+      </div>
+    </div>
+  </div>
+</div>
