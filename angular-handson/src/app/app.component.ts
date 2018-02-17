@@ -7,9 +7,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  newServer: any;
-  serverWasCreated(newServer: any) {
-    console.log(newServer);
-    this.newServer = newServer;
+  feature = 'directives';
+  featureWasSelected(feature) {
+    this.feature = feature;
   }
 }

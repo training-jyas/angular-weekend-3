@@ -44,18 +44,18 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Allow user to add ingredients to shopping list
 
 # Directives
-- [ ] Introduction - diff b/w structure and non structure
-- [ ] ngFor and ngIf recap
-- [ ] ngClass and ngStyle recap
-- [ ] Create a basic attribute directive
-- [ ] Using renderer to build better attribute directive
-- [ ] Using HostListener to listen to host events
-- [ ] Using HostBinding to bind to host properties
-- [ ] Binding to directive properties
-- [ ] ngSwitch
+- [X] Introduction - diff b/w structure and non structure
+- [X] ngFor and ngIf recap
+- [X] ngClass and ngStyle recap
+- [X] Create a basic attribute directive
+- [X] Using renderer to build better attribute directive
+- [X] Using HostListener to listen to host events
+- [X] Using HostBinding to bind to host properties
+- [X] Binding to directive properties
+- [x] ngSwitch
 
 # Project - Directives
-- [ ] Make the dropdown work using a directive
+- [X] Make the dropdown work using a directive
 
 # Project - Services
 - [ ] Add service files

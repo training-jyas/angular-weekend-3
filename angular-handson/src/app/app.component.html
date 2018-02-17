@@ -1,18 +1,13 @@
 <div class="container">
-  <app-header></app-header>
+  <app-header (featureSelected)="featureWasSelected($event)"></app-header>
 
   <!-- this is how you call a attribute selector -->
   <!-- <div app-header></div> -->
 
   <!-- below you call the component as a class selector -->
   <!-- <div class="app-header"></div> -->
-  <app-create-server (srvCreated)="serverWasCreated($event)"></app-create-server>
-  <app-list-server [newSrv]="newServer">
-    <p #p>
-      this is a paragraph i pass extra
-    </p>
-  </app-list-server>
-
+  <app-components *ngIf="feature === 'components'"></app-components>
+  <app-directives *ngIf="feature === 'directives'"></app-directives>
   <div *ngIf="something;else showNothing">
     something
   </div>

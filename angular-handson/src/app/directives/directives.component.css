@@ -1,0 +1,13 @@
+.odd {
+    background-color: yellow;
+    font-style: italic;
+}
+
+.even {
+    background-color: cyan;
+    font-weight: bold;
+}
+
+.hover {
+    background-color: cyan;
+}
