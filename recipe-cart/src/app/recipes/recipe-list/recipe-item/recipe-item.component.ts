@@ -4,6 +4,7 @@ import {
   RecipeModel,
   IngredientModel
 } from '../../../shared/model/ui.model';
+import { RecipeService } from '../../../shared/recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -12,13 +13,13 @@ import {
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: RecipeModel;
-  @Output() recipeSelected = new EventEmitter<RecipeModel> ();
-  constructor() { }
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
 
-  recipeItemClicked() {
-    this.recipeSelected.emit(this.recipe);
+  selectRecipe() {
+    this.recipeService.selectRecipe(this.recipe);
   }
 }

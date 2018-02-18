@@ -10,14 +10,8 @@ import { IngredientModel } from './shared/model/ui.model';
 })
 export class AppComponent {
   feature = 'recipes';
-  ingredients: Array<IngredientModel>;
 
   featureWasSelected(feature: string) {
     this.feature = feature;
-  }
-
-  ingredientsWasAdded(ingredients: Array<IngredientModel>) {
-    console.log(ingredients);
-    this.ingredients = ingredients;
   }
 }
