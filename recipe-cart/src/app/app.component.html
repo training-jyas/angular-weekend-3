@@ -1,9 +1,7 @@
 <app-header (featureSelected)="featureWasSelected($event)"></app-header>
 <app-recipes
-    *ngIf="feature === 'recipes'"
-    (addIngredients)="ingredientsWasAdded($event)">
+    *ngIf="feature === 'recipes'">
 </app-recipes>
 <app-shopping
-    *ngIf="feature === 'shopping'"
-    [ings]="ingredients">
+    *ngIf="feature === 'shopping'">
 </app-shopping>

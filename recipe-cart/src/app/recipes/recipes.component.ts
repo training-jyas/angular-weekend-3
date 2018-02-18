@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 
 import { RecipeModel, IngredientModel } from '../shared/model/ui.model';
+import { RecipeService } from '../shared/recipe.service';
 
 @Component({
   selector: 'app-recipes',
@@ -15,12 +16,14 @@ import { RecipeModel, IngredientModel } from '../shared/model/ui.model';
 export class RecipesComponent implements OnInit {
   @Output() addIngredients = new EventEmitter < Array < IngredientModel >> ();
   recipe: RecipeModel;
-  constructor() {}
 
-  ngOnInit() {}
+  constructor(private recipeService: RecipeService) {}
 
-  recipeWasSelected(recipe: RecipeModel) {
-    this.recipe = recipe;
+  ngOnInit() {
+    this.recipeService.recipeSelected
+    .subscribe((recipe: RecipeModel) => {
+      this.recipe = recipe;
+    });
   }
 
   ingredientsWasAdded(ingredients: Array<IngredientModel>) {

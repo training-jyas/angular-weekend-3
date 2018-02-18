@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingModule } from './shopping/shopping.module';
+import { RecipeService } from './shared/recipe.service';
+import { IngredientService } from './shared/ingredient.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { ShoppingModule } from './shopping/shopping.module';
     RecipesModule,
     ShoppingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ RecipeService, IngredientService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

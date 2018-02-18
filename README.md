@@ -58,13 +58,13 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Make the dropdown work using a directive
 
 # Project - Services
-- [ ] Add service files
-- [ ] Manage recipes in a recipe service
-- [ ] Cross component communication to select recipe
-- [ ] Add shopping list service
-- [ ] Reactive service informing ingredient changes
-- [ ] Add ingredients to recipe
-- [ ] Pass ingredients from recipe
+- [X] Add service files
+- [X] Manage recipes in a recipe service
+- [X] Cross component communication to select recipe
+- [X] Add shopping list service
+- [X] Reactive service informing ingredient changes
+- [X] Add ingredients to recipe
+- [X] Pass ingredients from recipe
 
 # Routing
 - [ ] Why routes ?

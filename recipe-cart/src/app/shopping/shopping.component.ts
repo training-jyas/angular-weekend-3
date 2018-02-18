@@ -1,38 +1,26 @@
 import {
   Component,
   OnInit,
-  Input,
-  OnChanges,
-  SimpleChanges
+  Input
 } from '@angular/core';
 
 import {
   IngredientModel
 } from '../shared/model/ui.model';
+import { IngredientService } from '../shared/ingredient.service';
 
 @Component({
   selector: 'app-shopping',
   templateUrl: './shopping.component.html',
   styleUrls: ['./shopping.component.scss']
 })
-export class ShoppingComponent implements OnInit, OnChanges {
-  @Input() ings: Array<IngredientModel>;
+export class ShoppingComponent implements OnInit {
+  ingredients: IngredientModel[];
 
-  ingredients = [
-    new IngredientModel('Bread', 1),
-    new IngredientModel('Bread', 1)
-  ];
-
-  constructor() {}
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-    console.log(this.ings);
-  }
+  constructor(private ingredientService: IngredientService) {}
 
   ngOnInit() {
-    console.log(this.ings);
-    this.ingredients.push(...this.ings);
+    this.ingredients = this.ingredientService.getIngredients();
   }
 
 }
