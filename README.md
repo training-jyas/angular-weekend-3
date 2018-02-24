@@ -67,14 +67,14 @@ Peddyreddy, Bharat, Abhinav, Supriya, Sharath, Nandini
 - [X] Pass ingredients from recipe
 
 # Routing
-- [ ] Why routes ?
-- [ ] Setting up Routes.
-- [ ] Adding navigation to the app
-- [ ] Marking active routes
+- [X] Why routes ?
+- [X] Setting up Routes.
+- [X] Adding navigation to the app
+- [x] Marking active routes
 - [ ] Fixing page reload issues
-- [ ] Addig child routes
-- [ ] Configure route parameters
-- [ ] Styling active recipe item
+- [X] Adding child routes
+- [X] Configure route parameters
+- [X] Styling active recipe item
 - [ ] Adding edit route and recieve route parameters
 - [ ] Programmatic navigation to the edit page
 

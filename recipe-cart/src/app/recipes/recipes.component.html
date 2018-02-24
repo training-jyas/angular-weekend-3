@@ -4,12 +4,7 @@
       <app-recipe-list></app-recipe-list>
     </div>
     <div class="col-sm-7">
-      <app-recipe-default *ngIf="!recipe"></app-recipe-default>
-      <app-recipe-detail 
-        *ngIf="recipe"
-        [recipe]="recipe"
-        (addIngredients)="ingredientsWasAdded($event)">
-      </app-recipe-detail>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

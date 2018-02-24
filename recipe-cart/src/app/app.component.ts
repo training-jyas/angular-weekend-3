@@ -9,9 +9,5 @@ import { IngredientModel } from './shared/model/ui.model';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  feature = 'recipes';
 
-  featureWasSelected(feature: string) {
-    this.feature = feature;
-  }
 }

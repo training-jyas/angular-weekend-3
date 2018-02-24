@@ -1,7 +1,2 @@
-<app-header (featureSelected)="featureWasSelected($event)"></app-header>
-<app-recipes
-    *ngIf="feature === 'recipes'">
-</app-recipes>
-<app-shopping
-    *ngIf="feature === 'shopping'">
-</app-shopping>
+<app-header></app-header>
+<router-outlet></router-outlet>
