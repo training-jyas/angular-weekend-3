@@ -13,10 +13,12 @@ import { RecipeService } from '../../../shared/recipe.service';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: RecipeModel;
+  @Input() id: number|string;
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    console.log(this.recipe, this.id);
   }
 
   selectRecipe() {
