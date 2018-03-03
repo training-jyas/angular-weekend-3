@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RecipeService {
   recipeSelected = new Subject<RecipeModel>();
+  recipesUpdated = new Subject<RecipeModel[]>();
 
   private recipes: Array < RecipeModel > = [
     new RecipeModel(
@@ -37,6 +38,20 @@ export class RecipeService {
 
   selectRecipe(recipe: RecipeModel) {
     this.recipeSelected.next(recipe);
+  }
+
+  removeRecipe(id: number) {
+    this.recipes.splice(id, 1);
+  }
+
+  updateRecipe(id: number, recipe: RecipeModel) {
+    this.recipes.splice(id, 1, recipe);
+    this.recipesUpdated.next(this.recipes.slice());
+  }
+
+  addRecipe(recipe: RecipeModel) {
+    this.recipes.push(recipe);
+    this.recipesUpdated.next(this.recipes.slice());
   }
 
   addIngredients(ingredients: IngredientModel[]) {
