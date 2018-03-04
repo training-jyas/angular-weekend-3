@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th class="th">#</th>
+            <th class="th">Name</th>
+            <th class="th">DOJ</th>
+            <th class="th">Role</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr class="tr" *ngFor="let user of users;let i = index">
+            <td class="td">{{i}}</td>
+            <td class="td">{{user.name | titlecase}}</td>
+            <td class="td">{{user.doj | date | lowercase}}</td>
+            <td class="td">{{user.role | truncate:10}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+</div>

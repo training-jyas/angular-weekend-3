@@ -7,7 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  feature = 'directives';
+  feature = 'pipes';
   featureWasSelected(feature) {
     this.feature = feature;
   }

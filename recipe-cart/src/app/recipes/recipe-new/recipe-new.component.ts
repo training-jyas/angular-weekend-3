@@ -26,7 +26,7 @@ export class RecipeNewComponent implements OnInit {
         this.id = params['id'];
         this.editMode = true;
         this.recipe = this.recipeService.getRecipe(this.id);
-        console.log(this.recipe);
+        console.log(this.recipe, 'in edit component');
       } else {
         this.editMode = false;
       }
@@ -68,9 +68,10 @@ export class RecipeNewComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('form is submitted', this.recipeForm);
     if (this.editMode) {
-      this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+      const recipeToSave = <RecipeModel>this.recipeForm.value;
+      recipeToSave.id = this.recipe.id;
+      this.recipeService.updateRecipe(recipeToSave);
       this.router.navigate(['/recipes', this.id]);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);

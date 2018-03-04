@@ -13,12 +13,12 @@ import { RecipeService } from '../../../shared/recipe.service';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: RecipeModel;
-  @Input() id: number|string;
+  @Input() index: number|string;
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    console.log(this.recipe, this.id);
+    console.log(this.recipe, 'in recipe item on init');
   }
 
   selectRecipe() {

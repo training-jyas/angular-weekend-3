@@ -17,7 +17,6 @@ export class IngredientService {
 
   addIngredients(ingredients: IngredientModel[]) {
     this.ingredients = this.ingredients.concat(ingredients);
-    console.log(this.ingredients);
     // this.ingredientsAdded.next(ingredients);
   }
 }

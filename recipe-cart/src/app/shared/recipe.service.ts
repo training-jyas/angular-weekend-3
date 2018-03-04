@@ -1,60 +1,92 @@
 import {
+  Injectable
+} from '@angular/core';
+import { Router } from '@angular/router';
+import {
   IngredientModel,
   RecipeModel
 } from './model/ui.model';
-import { Subject } from 'rxjs/Subject';
-import { IngredientService } from './ingredient.service';
-import { Injectable } from '@angular/core';
+import {
+  Subject
+} from 'rxjs/Subject';
+import {
+  IngredientService
+} from './ingredient.service';
+import {
+  StorageService
+} from './storage.service';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new Subject<RecipeModel>();
-  recipesUpdated = new Subject<RecipeModel[]>();
+  recipeSelected = new Subject < RecipeModel > ();
+  recipesUpdated = new Subject < RecipeModel[] > ();
 
-  private recipes: Array < RecipeModel > = [
-    new RecipeModel(
-      'Recipe 1',
-      'Very tasty', 'https://upload.wikimedia.org/wikipedia/commons/e/e6/BLT_sandwich_on_toast.jpg', [
-        new IngredientModel('Bread', 1),
-        new IngredientModel('Cheese', 2)
-      ]),
-    new RecipeModel(
-      'Recipe 2',
-      'Very tastyyyyy', 'http://www.freepngimg.com/download/burger/6-2-burger-png-image.png', [
-        new IngredientModel('Bun', 2),
-        new IngredientModel('Ketchup', 1)
-      ])
-  ];
+  private recipes: Array < RecipeModel > = [];
 
-  constructor(private ingredientService: IngredientService) { }
+  constructor(private ingredientService: IngredientService,
+    private storageService: StorageService,
+    private router: Router) {}
 
   getRecipe(id: number) {
     return this.recipes.slice()[id];
   }
 
   getRecipes() {
-    return this.recipes.slice();
+    this.storageService.fetchRecipes()
+      .subscribe((recipes: RecipeModel[]) => {
+        this.recipes = recipes;
+        this.recipesUpdated.next(this.recipes);
+      }, (error) => {
+        console.log('error in fetch');
+      });
   }
 
   selectRecipe(recipe: RecipeModel) {
     this.recipeSelected.next(recipe);
   }
 
-  removeRecipe(id: number) {
-    this.recipes.splice(id, 1);
+  removeRecipe(recipe: RecipeModel) {
+    this.storageService.deleteRecipe(recipe)
+    .subscribe(resonse => {
+      console.log('successful delete');
+      this.router.navigate(['recipes']);
+    }, (error) => {
+      console.log('error in delete');
+    });
   }
 
-  updateRecipe(id: number, recipe: RecipeModel) {
-    this.recipes.splice(id, 1, recipe);
-    this.recipesUpdated.next(this.recipes.slice());
+  updateRecipe(recipe: RecipeModel) {
+    console.log(recipe, 'in update recipe service');
+    this.storageService.updateRecipe(recipe)
+      .subscribe((response) => {
+        console.log(response);
+        this.recipes.forEach((item: RecipeModel) => {
+          if (item.id === recipe.id) {
+            item.id = recipe.id;
+            item.name = response['name'];
+            item.description = response['description'];
+            item.imagePath = response['imagePath'];
+            item.ingredients = response['ingredients'] || [];
+          }
+        });
+        this.router.navigate(['recipes']);
+      }, (error) => {
+        console.log('error in update');
+      });
   }
 
   addRecipe(recipe: RecipeModel) {
-    this.recipes.push(recipe);
-    this.recipesUpdated.next(this.recipes.slice());
+    this.storageService.addRecipe(recipe)
+      .subscribe(response => {
+        console.log('success save', response);
+        this.router.navigate(['recipes']);
+      }, (error) => {
+        console.log('error in update');
+      });
   }
 
   addIngredients(ingredients: IngredientModel[]) {
     this.ingredientService.addIngredients(ingredients);
   }
+
 }
