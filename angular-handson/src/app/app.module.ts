@@ -10,10 +10,12 @@ import { DirectivesComponent } from './directives/directives.component';
 import { ComponentsComponent } from './components/components.component';
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { PipesComponent } from './pipes/pipes.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [ // all the components and directives go here
-    AppComponent, DirectivesComponent, ComponentsComponent, BasicHighlightDirective, BetterHighlightDirective
+    AppComponent, DirectivesComponent, ComponentsComponent, BasicHighlightDirective, BetterHighlightDirective, PipesComponent, TruncatePipe
   ],
   imports: [ // all the third party modules go here
     BrowserModule,

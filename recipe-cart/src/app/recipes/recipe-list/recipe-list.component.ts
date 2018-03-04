@@ -17,15 +17,16 @@ import { RecipeService } from '../../shared/recipe.service';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipeSelected = new EventEmitter<RecipeModel> ();
-  recipes: Array<RecipeModel> = [];
+@Output() recipeSelected = new EventEmitter<RecipeModel> ();
+recipes: Array<RecipeModel> = [];
 
   constructor(private recipeService: RecipeService) {}
 
   ngOnInit() {
-    this.recipes = this.recipeService.getRecipes();
+    this.recipeService.getRecipes();
     this.recipeService.recipesUpdated
     .subscribe((recipes: RecipeModel[]) => {
+      console.log(recipes, 'in recipe list');
       this.recipes = recipes;
     });
   }
